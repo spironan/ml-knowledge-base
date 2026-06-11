@@ -2,7 +2,7 @@
 
 A curated collection of free, trusted AI/ML learning resources.
 
-**Live site:** `https://<your-username>.github.io/ml-knowledge-base/`
+**Live site:** https://spironan.github.io/ml-knowledge-base/
 
 ## Adding a resource
 
