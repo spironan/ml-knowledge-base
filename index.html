@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ML Knowledge Base</title>
+<title>ML Shelf — Free AI/ML Learning Resources</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #0b0b14;
-    --surface: #13132a;
-    --surface-hover: #1a1a36;
-    --border: #262647;
-    --text: #e2e2f0;
-    --text-muted: #8585a8;
-    --accent: #7b6ff0;
-    --accent-soft: rgba(123,111,240,0.12);
-    --accent-hover: #9086f4;
-    --beginner: #34d399;
-    --intermediate: #fbbf24;
-    --advanced: #f87171;
-    --shadow: 0 2px 12px rgba(0,0,0,0.3);
+    --bg: #E0D9C8;
+    --surface: #FAF9F5;
+    --surface-hover: #FFFFFF;
+    --border: #57544A;
+    --outline: rgba(193,95,60,0.55);
+    --text: #141413;
+    --text-muted: #6E6D66;
+    --accent: #C15F3C;
+    --accent-soft: rgba(217,119,87,0.12);
+    --accent-hover: #D97757;
+    --shadow: 0 2px 12px rgba(20,20,19,0.07);
     --radius: 10px;
     --transition: 0.2s ease;
   }
 
-  [data-theme="light"] {
-    --bg: #f3f4f8;
-    --surface: #ffffff;
-    --surface-hover: #f0f0f8;
-    --border: #dddde8;
-    --text: #1a1b2e;
-    --text-muted: #6a6b82;
-    --accent: #6558e0;
-    --accent-soft: rgba(101,88,224,0.08);
-    --accent-hover: #7b6ff0;
-    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  [data-theme="dark"] {
+    --bg: #262624;
+    --surface: #30302E;
+    --surface-hover: #393937;
+    --border: #45443F;
+    --outline: rgba(217,119,87,0.6);
+    --text: #F5F4EF;
+    --text-muted: #A6A39A;
+    --accent: #D97757;
+    --accent-soft: rgba(217,119,87,0.14);
+    --accent-hover: #E48B6D;
+    --shadow: 0 2px 12px rgba(0,0,0,0.35);
   }
 
   body {
@@ -73,9 +72,17 @@
   .logo-mark svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
   .logo h1 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    width: 100%;
+    margin-top: -6px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
   }
 
   .logo h1 span { color: var(--accent); }
@@ -213,25 +220,12 @@
   .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 
   .card-title {
-    font-size: 0.95rem;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.02rem;
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: -0.01em;
   }
-
-  .difficulty {
-    flex-shrink: 0;
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  .difficulty.beginner { background: rgba(52,211,153,0.15); color: var(--beginner); }
-  .difficulty.intermediate { background: rgba(251,191,36,0.15); color: var(--intermediate); }
-  .difficulty.advanced { background: rgba(248,113,113,0.15); color: var(--advanced); }
 
   .card-author {
     font-size: 0.8rem;
@@ -257,6 +251,7 @@
     border-radius: 4px;
     background: var(--accent-soft);
     color: var(--accent);
+    border: 1px solid var(--outline);
   }
 
   .card-link {
@@ -267,7 +262,8 @@
     font-weight: 500;
     color: var(--accent);
     text-decoration: none;
-    padding: 6px 12px;
+    padding: 5px 11px;
+    border: 1px solid var(--outline);
     border-radius: 6px;
     transition: background var(--transition);
     flex-shrink: 0;
@@ -296,7 +292,7 @@
       <div class="logo-mark">
         <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       </div>
-      <h1>ML<span>Base</span></h1>
+      <h1>ML <span>Shelf</span></h1>
     </div>
     <div class="header-right">
       <span class="resource-count" id="count"></span>
@@ -304,6 +300,7 @@
         <svg id="themeIcon" viewBox="0 0 24 24"></svg>
       </button>
     </div>
+    <p class="tagline">Free, curated resources for learning AI &amp; ML — search anything, or filter by type.</p>
   </header>
 
   <div class="controls">
@@ -320,72 +317,142 @@
 <script>
 // ── Resource Data ─────────────────────────────
 // To add a resource: push an object to this array with the same shape.
+// First category = primary grouping; entries are sorted by category → author → title.
 const resources = [
+  // ── Explainers ──
   {
-    title: "Andrej Karpathy — AI & Deep Learning",
+    title: "Deep Dive into LLMs like ChatGPT",
     author: "Andrej Karpathy",
-    categories: ["YouTube", "Deep Learning"],
-    description: "Former Tesla AI director covers neural networks from scratch, GPT internals, and broad AI insights. Both technical deep dives and accessible general talks.",
-    url: "https://www.youtube.com/@AndrejKarpathy",
-    difficulty: "Intermediate"
+    categories: ["Explainers", "LLM", "YouTube"],
+    description: "3.5-hour general-audience walkthrough of the full LLM training stack — pretraining, fine-tuning, RLHF, hallucinations, and mental models for using LLMs well. Part of his general-audience track alongside 'Intro to Large Language Models' and 'How I Use LLMs'.",
+    url: "https://www.youtube.com/watch?v=7xTGNNLPyMI"
+  },
+  {
+    title: "Neural Networks: Zero to Hero",
+    author: "Andrej Karpathy",
+    categories: ["Projects", "Deep Learning", "YouTube"],
+    description: "Builds neural networks entirely from scratch in code — backpropagation, micrograd, makemore, and finally a GPT. The definitive hands-on deep learning series.",
+    url: "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ"
   },
   {
     title: "Neural Networks Series",
     author: "3Blue1Brown",
-    categories: ["YouTube", "Neural Networks"],
+    categories: ["Explainers", "Neural Networks"],
     description: "Visual, intuition-first walkthrough of neural networks — backpropagation, gradient descent, and network architecture explained through elegant animations.",
-    url: "https://www.3blue1brown.com/topics/neural-networks",
-    difficulty: "Beginner"
-  },
-  {
-    title: "Attention in Transformers",
-    author: "3Blue1Brown",
-    categories: ["YouTube", "Transformers"],
-    description: "Visual explanation of the attention mechanism powering modern LLMs. Builds geometric intuition for queries, keys, and values.",
-    url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
-    difficulty: "Intermediate"
+    url: "https://www.3blue1brown.com/topics/neural-networks"
   },
   {
     title: "But What Is a GPT?",
     author: "3Blue1Brown",
-    categories: ["YouTube", "Transformers"],
-    description: "Accessible visual breakdown of GPT models — from token embeddings through transformer layers to next-token prediction.",
-    url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
-    difficulty: "Beginner"
+    categories: ["Explainers", "Transformers"],
+    description: "Accessible visual breakdown of GPT models — from token embeddings through transformer layers to next-token prediction. Chapter 5 of the deep learning series.",
+    url: "https://www.3blue1brown.com/lessons/gpt"
   },
   {
-    title: "Build Your Own GPT",
-    author: "Neetcode",
-    categories: ["YouTube", "Projects"],
-    description: "Hands-on coding series building a GPT from scratch. Bridges theory and implementation with clear, step-by-step code walkthroughs.",
-    url: "https://neetcode.io/",
-    difficulty: "Intermediate"
+    title: "Attention in Transformers",
+    author: "3Blue1Brown",
+    categories: ["Explainers", "Transformers"],
+    description: "Visual explanation of the attention mechanism powering modern LLMs. Builds geometric intuition for queries, keys, and values. Chapter 6 of the deep learning series.",
+    url: "https://www.3blue1brown.com/lessons/attention"
   },
+  {
+    title: "StatQuest: Machine Learning",
+    author: "Josh Starmer",
+    categories: ["Explainers", "ML Fundamentals", "YouTube"],
+    description: "Step-by-step explanations of core ML and statistics — regression, trees, boosting, SVMs, neural networks — broken into small, clearly explained pieces.",
+    url: "https://www.youtube.com/playlist?list=PLng25Lwn1Xd11NzZFwn8ZyLr-cwWvZi59"
+  },
+
+  // ── University Courses ──
   {
     title: "CS231N — CNNs for Visual Recognition",
     author: "Stanford University",
     categories: ["University Course", "Computer Vision"],
     description: "Stanford's flagship deep learning course. Full lectures, notes, and assignments covering convolutional networks, training methodology, and visual recognition.",
-    url: "http://cs231n.stanford.edu/",
-    difficulty: "Advanced"
+    url: "http://cs231n.stanford.edu/"
   },
+  {
+    title: "CS224N — NLP with Deep Learning",
+    author: "Stanford University",
+    categories: ["University Course", "NLP", "Transformers"],
+    description: "Stanford's natural language processing course — word vectors, RNNs, transformers, and LLMs. Lectures, notes, and assignments freely available.",
+    url: "https://web.stanford.edu/class/cs224n/"
+  },
+  {
+    title: "6.S191 — Introduction to Deep Learning",
+    author: "MIT",
+    categories: ["University Course", "Deep Learning"],
+    description: "MIT's fast-paced intro to deep learning — fundamentals through computer vision, NLP, and generative models. Lectures and labs published free each year.",
+    url: "https://introtodeeplearning.com/"
+  },
+  {
+    title: "Practical Deep Learning for Coders",
+    author: "fast.ai",
+    categories: ["University Course", "Deep Learning", "Projects"],
+    description: "Top-down, code-first deep learning course. Trains state-of-the-art models from lesson one, then unpacks the theory underneath. Free book and videos.",
+    url: "https://course.fast.ai/"
+  },
+
+  // ── Projects ──
+  {
+    title: "Build a Large Language Model (From Scratch)",
+    author: "Sebastian Raschka",
+    categories: ["Projects", "LLM"],
+    description: "Repository implementing a GPT-style LLM step by step in PyTorch — pretraining, fine-tuning, and instruction tuning — with companion notebooks and videos.",
+    url: "https://github.com/rasbt/LLMs-from-scratch"
+  },
+  {
+    title: "LLM Course",
+    author: "Hugging Face",
+    categories: ["Projects", "LLM", "NLP"],
+    description: "Hands-on course on transformers and the Hugging Face ecosystem — using, fine-tuning, and sharing models. Completely free, with runnable notebooks.",
+    url: "https://huggingface.co/learn/llm-course/chapter1/1"
+  },
+
+  // ── Articles ──
   {
     title: "Large Language Models — Topic Hub",
     author: "GeeksForGeeks",
     categories: ["Articles", "LLM"],
     description: "Free article collection covering LLM fundamentals, architectures, fine-tuning, prompt engineering, and practical applications.",
-    url: "https://www.geeksforgeeks.org/large-language-model-llm/",
-    difficulty: "Beginner"
+    url: "https://www.geeksforgeeks.org/large-language-model-llm/"
+  },
+  {
+    title: "The Illustrated Transformer",
+    author: "Jay Alammar",
+    categories: ["Articles", "Transformers"],
+    description: "The canonical visual explainer of the transformer architecture — attention, multi-head mechanisms, and encoder-decoder flow, one diagram at a time.",
+    url: "https://jalammar.github.io/illustrated-transformer/"
+  },
+  {
+    title: "Dive into Deep Learning",
+    author: "d2l.ai",
+    categories: ["Articles", "Deep Learning"],
+    description: "Free interactive deep learning book with runnable code in PyTorch, NumPy, and JAX. Adopted by hundreds of universities worldwide.",
+    url: "https://d2l.ai/"
+  },
+  {
+    title: "Machine Learning Crash Course",
+    author: "Google",
+    categories: ["Articles", "ML Fundamentals"],
+    description: "Google's fast-paced, practical introduction to machine learning — short lessons with interactive visualizations and programming exercises.",
+    url: "https://developers.google.com/machine-learning/crash-course"
   }
 ];
 
 // ── Derived state ─────────────────────────────
-const primaryCategories = ["YouTube", "University Course", "Articles", "Projects"];
+const primaryCategories = ["Explainers", "University Course", "Projects", "Articles"];
 let activeFilter = "All";
 let searchQuery = "";
 
-// ── Difficulty accent map ─────────────────────
-const difficultyColor = { Beginner: "#34d399", Intermediate: "#fbbf24", Advanced: "#f87171" };
+// ── Category accent map (card top strip) ─────
+const categoryColor = {
+  "Explainers": "#D97757",
+  "University Course": "#6A9BCC",
+  "Projects": "#788C5D",
+  "Articles": "#D4A27F"
+};
+const fallbackAccent = "#C15F3C";
 
 // ── SVG icon paths ────────────────────────────
 const icons = {
@@ -450,11 +517,20 @@ function renderGrid() {
     return;
   }
 
+  // Order: primary category (per primaryCategories) → author → title.
+  // Keeps the same person's content together regardless of array order.
+  filtered.sort((a, b) => {
+    const ca = primaryCategories.indexOf(a.categories[0]);
+    const cb = primaryCategories.indexOf(b.categories[0]);
+    if (ca !== cb) return (ca === -1 ? 99 : ca) - (cb === -1 ? 99 : cb);
+    if (a.author !== b.author) return a.author.localeCompare(b.author);
+    return a.title.localeCompare(b.title);
+  });
+
   gridEl.innerHTML = filtered.map(r => `
-    <article class="card" style="--card-accent: ${difficultyColor[r.difficulty]}">
+    <article class="card" style="--card-accent: ${categoryColor[r.categories[0]] || fallbackAccent}">
       <div class="card-header">
         <div class="card-title">${r.title}</div>
-        <span class="difficulty ${r.difficulty.toLowerCase()}">${r.difficulty}</span>
       </div>
       <div class="card-author">${r.author}</div>
       <p class="card-desc">${r.description}</p>
